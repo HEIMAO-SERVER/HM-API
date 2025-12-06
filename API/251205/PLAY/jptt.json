@@ -1,37 +1,37 @@
 {
-  "name": "D2pvPPeh6DxVnTc0CDiPDGqJpsLpUKIhjzuycRfedOU=",
-  "base_url": "kDMJFVkhWkwjUQHUkdKdfaRJD1TE6S3Bx0RGIfIXQ57qZkNLkiDq9rLcOIh6yAmr",
+  "name": "禁片天堂",
+  "base_url": "https://ttvvcc.work",
   "steps": [
     {
-      "action": "hG+m/vbYZv3ownPX3tvKNrWKRRd2zqh+oFaGSh2Dfz4=",
-      "url": "yReV6q+vknz1sPU/gRWrt6y1ptZp50jatfcFObD2bKg=",
-      "priority_scraper": "ujAf10RmqJGnbtKfKnmn4xQMwyBarCY6suLeyTOzbXo=",
-      "max_retries": "MmEkLeMS5Fq8+FboUeqZqgAgZjJRFkMmG6Z0uv0BWbA=",
-      "timeout": "akjuvP0h+TT3SRMkZQjDsUn07lmE2Ik7hU/TqsbBzMk="
+      "action": "request",
+      "url": "{{base_url}}",
+      "priority_scraper": true,
+      "max_retries": 3,
+      "timeout": 15
     },
     {
-      "action": "EhMi1pzXVhh1kuHNHNth+J599CnpJjgwzf49RtC3b+E=",
-      "selector": "F0D7cERU0CVuGWRhR7jtsk6qSq44jRaXagBRww2GaYM=",
-      "attribute": "574Zq1aliRCxdk/urrJ5BReFv++OgHSHAT8TnlfhhDM=",
-      "multiple": "cl4Z+4s1TkzRZd4y1ENsfUIi0zUu4O/Nu97CNDtZZA4=",
-      "save_as": "fpUTScqjP7AR1p6HnLomdwaLIFVkMkxPwve0dyfNT9Q="
+      "action": "select",
+      "selector": "div.info h3",
+      "attribute": "text",
+      "multiple": true,
+      "save_as": "h3_text_list"
     },
     {
-      "action": "Ex/xS1PgzEhSvu9+4PDenkvjNnS031+1KzaccsKtQHM=",
-      "selector": "8vpFFfm+tM++2Jmig2V75T4mh7dctDr33y0FUwGJydg=",
-      "attribute": "OQgUHE42Q6Fzpvn5xM5q7bRnwUz0gKU0e1OXFclh8Ok=",
-      "multiple": "B2rzJkg9Nguc9a1Ajyy0gVRIaGNNuI7BsV8o6pZG18Q=",
-      "save_as": "rpNT0GpEQBdawYrZ04AYNoT7TtJ2IrX6w6Ctm+DNf6o="
+      "action": "select",
+      "selector": "div.info h4",
+      "attribute": "text",
+      "multiple": true,
+      "save_as": "h4_text_list"
     },
     {
-      "action": "jI/Nd49mxP1pe9EFNizchnWB/EmE8Lm/ophJroqg8hc=",
-      "title_list": "eAEENhWsEPNq662uQkKsRFCsqkCeOfyZ+26v596kr/I=",
-      "content_list": "4mNR/YHePtmnuTqkA88A5LV2LwI3+XIan7OHRYhJsZE=",
-      "save_as": "DRB09BSFJaFhpjR2ater+wU9Wd3wSdp88dUDsFBiO28="
+      "action": "extract_domains",
+      "title_list": "h3_text_list",
+      "content_list": "h4_text_list",
+      "save_as": "domain_list"
     }
   ],
   "result": {
-    "domains": "VgsgVuOlM3j5OXlI1el1VyW9gZ35u6xTNWftDw9G0vQ=",
-    "wd_url": "97TrgwKRy300Rrr8TJLwFpEL9lrmyU++kPlpSra9zIujmHEPDDqU3f1UmKz73wTx"
+    "domains": "{{domain_list}}",
+    "wd_url": "/video/<*>?ref=HEIMAO"
   }
 }
